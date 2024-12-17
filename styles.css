@@ -1,0 +1,71 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 700px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #444;
+  }
+  
+  .inputs label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  input {
+    padding: 5px;
+    margin-left: 10px;
+    width: 100px;
+  }
+  
+  button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background: #0056b3;
+  }
+  
+  .tick-data {
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .up {
+    color: green;
+  }
+  
+  .down {
+    color: red;
+  }
+  
+  .neutral {
+    color: yellow;
+  }
+  
+  #trade-status {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  

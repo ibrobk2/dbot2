@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deriv Trading Bot - Strategy</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+    />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .input-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            font-size: 1rem;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .status {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .signal {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .signal.up {
+            color: green;
+        }
+
+        .signal.down {
+            color: red;
+        }
+
+        .profit-loss {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        .profit {
+            color: green;
+            font-weight: bold;
+        }
+
+        .loss {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deriv Bot</h1>
+    <div class="container">
+        <!-- Index Selection -->
+        <div class="input-group">
+            <label for="index">Select Volatility Index:</label>
+            <select id="index">
+                <option value="R_10">Volatility 10 Index</option>
+                <option value="R_25">Volatility 25 Index</option>
+                <option value="R_50">Volatility 50 Index</option>
+                <option value="R_75">Volatility 75 Index</option>
+                <option value="R_100" selected>Volatility 100 Index</option>
+            </select>
+        </div>
+
+        <!-- Stake, TP, SL -->
+        <div class="input-group">
+            <label for="stake">Stake Amount:</label>
+            <input type="number" id="stake" placeholder="Enter stake" value="10" />
+        </div>
+
+        <div class="input-group">
+            <label for="take-profit">Take Profit (USD):</label>
+            <input type="number" id="take-profit" placeholder="Enter TP" value="50" />
+        </div>
+
+        <div class="input-group">
+            <label for="stop-loss">Stop Loss (USD):</label>
+            <input type="number" id="stop-loss" placeholder="Enter SL" value="20" />
+        </div>
+
+        <!-- Start Button -->
+        <button id="start-btn">Start Trading</button>
+        <p class="status">Status: <span id="status-text">Waiting...</span></p>
+
+        <!-- Signal Display -->
+        <div class="signal" id="signal">No Signal</div>
+
+        <!-- Profit and Loss Display -->
+        <div class="profit-loss">
+            <div>Profit: <span class="profit" id="profit-amount">0</span> USD</div>
+            <div>Loss: <span class="loss" id="loss-amount">0</span> USD</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
